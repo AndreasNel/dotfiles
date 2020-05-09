@@ -1,0 +1,4 @@
+[submodule "vimrc"]
+	path = vimrc
+	url = https://github.com/AndreasNel/vimrc
+	branch = master
