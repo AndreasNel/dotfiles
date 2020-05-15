@@ -1,0 +1,12 @@
+# Limit length of long lines, show a preview
+--max-columns=150
+--max-columns-preview
+
+# Globs
+--glob=!.git/*
+
+# Case insensitive search, unless typed
+--smart-case
+
+# Follow symlinks
+--follow

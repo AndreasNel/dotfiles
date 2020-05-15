@@ -1,0 +1,21 @@
+# Add scripts to PATH
+export PATH=$PATH:$HOME/bin
+
+# All python logs should immediately flush to stdout.
+export PYTHONUNBUFFERED=1
+
+# Eternal bash history.
+# ---------------------
+# Undocumented feature which sets the size to "unlimited".
+# http://stackoverflow.com/questions/9457233/unlimited-bash-history
+export HISTFILESIZE=
+export HISTSIZE=
+export HISTTIMEFORMAT="[%F %T] "
+# Change the file location because certain bash sessions truncate .bash_history file upon close.
+# http://superuser.com/questions/575479/bash-history-truncated-to-500-lines-on-each-login
+export HISTFILE=~/.bash_eternal_history
+# Some commands I just don't feel are necessary to write to history.
+export HISTIGNORE='rm *:ls:git status:git reflog:less *:vim:vim .'
+
+# Set ripgrep configuration file
+export RIPGREP_CONFIG_PATH=~/.ripgreprc
