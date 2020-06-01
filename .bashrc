@@ -112,6 +112,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Environment variables
+source ~/.bash_env
+
 # Function to set the title of the terminal tab.
 function settitle() {
   if [[ -z "$ORIG" ]]; then
@@ -121,10 +124,11 @@ function settitle() {
   PS1=${ORIG}${TITLE}
 }
 
+if [ -x "$(command -v grunt)" ]; then
+    eval "$(grunt --completion=bash)"
+fi
+
 # Wakatime terminal integration
 source ~/bash-wakatime/bash-wakatime.sh
-
-# Environment variables
-source ~/.bash_env
 
 source /home/andreas/.config/broot/launcher/bash/br
