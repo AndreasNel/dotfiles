@@ -8,6 +8,6 @@
 \pset unicode_border_linestyle double
 \pset unicode_header_linestyle double
 \pset unicode_column_linestyle single
-\set gxweb_version 'SELECT * FROM gxweb.schema ORDER BY version DESC LIMIT 1;'
+\set gxweb_version `cat ~/.psql_aliases/gxweb_version.sql`
 \setenv PAGER 'pspg -s 5 --no-mouse'
 \set less '\\setenv PAGER \'less -S\''
