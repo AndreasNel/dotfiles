@@ -4,10 +4,11 @@
 	email = nel.andreas1@gmail.com
 	name = Andreas Nel
 [core]
-	editor = vim
+	editor = "vim --clean"
 	excludesfile = /home/andreas/.gitignore_global
 [alias]
     fixup = "!f() { TARGET=$(git rev-parse "$1"); git commit --fixup=$TARGET ${@:2} && EDITOR=true git rebase -i --autostash --autosquash $TARGET^; }; f"
+	rename = branch -m
 [grep]
 	lineNumber = true
 [fetch]

@@ -15,7 +15,7 @@ export HISTTIMEFORMAT="[%F %T] "
 # http://superuser.com/questions/575479/bash-history-truncated-to-500-lines-on-each-login
 export HISTFILE=~/.bash_eternal_history
 # Some commands I just don't feel are necessary to write to history.
-export HISTIGNORE='rm *:ls:git status:git reflog:less *:vim:vim .'
+export HISTIGNORE='rm *:ls:git status:git reflog:less *:vim:vim .:fg'
 
 # Set ripgrep configuration file
 export RIPGREP_CONFIG_PATH=~/.ripgreprc

@@ -9,5 +9,6 @@
 \pset unicode_header_linestyle double
 \pset unicode_column_linestyle single
 \set gxweb_version `cat ~/.psql_aliases/gxweb_version.sql`
-\setenv PAGER 'pspg -s 5 --no-mouse'
+\setenv PAGER 'less -S'
 \set less '\\setenv PAGER \'less -S\''
+\set pspg '\\setenv PAGER \'pspg -s 5 --no-mouse\''
