@@ -53,9 +53,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\][\[\033[02;33m\]\D{%F}\[\033[08m\]T\[\033[00m\]\[\033[02;33m\]\D{%T}\[\033[00m\]]\[\033[01;34m\]\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h[\D{%F} \D{%T}]:\w\$ '
 fi
 unset color_prompt force_color_prompt
 
@@ -128,7 +128,13 @@ if [ -x "$(command -v grunt)" ]; then
     eval "$(grunt --completion=bash)"
 fi
 
+if [ -x "$(command -v gh)" ]; then
+    eval "$(gh completion -s bash)"
+fi
+
 # Wakatime terminal integration
 source ~/bash-wakatime/bash-wakatime.sh
 
 source /home/andreas/.config/broot/launcher/bash/br
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
