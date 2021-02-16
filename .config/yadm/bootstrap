@@ -1,0 +1,20 @@
+#!/bin/sh
+
+cd "$HOME"
+echo "Init submodules"
+yadm submodule update --recursive --init
+
+# Init vim plugins
+if command -v vim >/dev/null 2>&1; then
+    echo "Bootstrapping Vim"
+    vim '+PlugUpdate' '+PlugClean!' '+qall'
+fi
+
+# Download tmux bash completion
+curl https://raw.githubusercontent.com/imomaliev/tmux-bash-completion/master/completions/tmux > ~/.bash_completion.d/tmux.sh
+
+# Reload tmux config
+if command -v tmux >/dev/null 2>&1; then
+    echo "Bootstrapping tmux"
+    tmux source ~/.tmux.conf
+fi
