@@ -124,17 +124,8 @@ function settitle() {
   PS1=${ORIG}${TITLE}
 }
 
-if [ -x "$(command -v grunt)" ]; then
-    eval "$(grunt --completion=bash)"
-fi
+[ -f ~/bash-wakatime/bash-wakatime.sh ] && source ~/bash-wakatime/bash-wakatime.sh
 
-if [ -x "$(command -v gh)" ]; then
-    eval "$(gh completion -s bash)"
-fi
-
-# Wakatime terminal integration
-source ~/bash-wakatime/bash-wakatime.sh
-
-source /home/andreas/.config/broot/launcher/bash/br
+[ -f ~/.config/broot/launcher/bash/br ] && source ~/.config/broot/launcher/bash/br
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
